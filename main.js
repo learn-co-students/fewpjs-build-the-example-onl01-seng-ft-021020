@@ -3,7 +3,26 @@ const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
+let errorModal = document.getElementById("modal")
+let likeButtons = document.getElementsByClassName("like")
 
+
+errorModal.className = "hidden"
+
+for (const element of likeButtons) {
+  element.addEventListener('click', (event) => {
+    let likeGlyph = element.getElementsByClassName("like-glyph")[0]
+    if (likeGlyph.innerText === EMPTY_HEART) {
+    likeGlyph.innerText = FULL_HEART
+    } else {
+      likeGlyph.innerText = EMPTY_HEART
+    }
+  })
+}
+
+document.addEventListener('DOMContentLoaded', (event) =>{
+  errorModal.className = "hidden"
+})
 
 
 
